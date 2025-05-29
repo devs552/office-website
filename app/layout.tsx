@@ -1,10 +1,12 @@
-import type React from "react"
+
+import React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, Code2, Mail, Phone, MapPin } from "lucide-react"
+import { Menu, Code2, Mail, Phone, MapPin, X } from "lucide-react"
+import Header from "../app/header/page"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,56 +23,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
         {/* Navigation */}
-        <nav className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-16">
-              {/* Logo */}
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <Code2 className="h-6 w-6 text-white" />
-                </div>
-                <span className="text-xl font-bold text-gray-300">KA's Tech</span>
-              </Link>
-
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                <Link href="/" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
-                  Home
-                </Link>
-                <Link href="/services" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
-                  Services
-                </Link>
-                <Link href="/portfolio" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
-                  Portfolio
-                </Link>
-                <Link href="/team" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
-                  Team
-                </Link>
-                <Link href="/courses" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
-                  Courses
-                </Link>
-                <Link href="/careers" className="text-gray-300 hover:text-cyan-400 font-medium transition-colors">
-                  Careers
-                </Link>
-                <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700">
-                  Get Quote
-                </Button>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <div className="md:hidden">
-                <Button variant="ghost" size="sm">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </nav>
-
+       <Header />
+        {/* Mobile Dropdown Menu */}
+      
         {/* Main Content */}
         <main>{children}</main>
 
