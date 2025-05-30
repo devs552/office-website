@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "KA's Tech - Professional Web Development Services",
+   icons: {
+    icon: '/favicon.ico', // or '/favicon.png'
+  },
   description:
     "Transform your ideas into digital reality with KA's Tech. We provide comprehensive web development, mobile apps, and custom software solutions.",
   keywords: "web development, mobile apps, custom software, React, Next.js, Node.js",
@@ -101,11 +104,7 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">Company</h3>
                 <ul className="space-y-2 text-gray-400">
-                  <li>
-                    <Link href="/" className="hover:text-white transition-colors">
-                      About Us
-                    </Link>
-                  </li>
+                 
                   <li>
                     <Link href="/portfolio" className="hover:text-white transition-colors">
                       Portfolio
@@ -121,13 +120,9 @@ export default function RootLayout({
                       Careers
                     </Link>
                   </li>
+                 
                   <li>
-                    <Link href="#" className="hover:text-white transition-colors">
-                      Blog
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="hover:text-white transition-colors">
+                    <Link href="contact" className="hover:text-white transition-colors">
                       Contact
                     </Link>
                   </li>
@@ -136,6 +131,11 @@ export default function RootLayout({
 
               {/* Newsletter */}
               <div>
+             Subscription available soon<br>
+             </br>
+             Stay Tuned.
+              </div>
+              <div className="hidden">
                 <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
                 <p className="text-gray-400 mb-4">
                   Subscribe to our newsletter for the latest tech insights and company updates.
@@ -146,7 +146,7 @@ export default function RootLayout({
                     placeholder="Enter your email"
                     className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:border-blue-600"
                   />
-                  <Button className="w-full">Subscribe</Button>
+                  <Button  className="w-full">Subscribe</Button>
                 </div>
               </div>
             </div>

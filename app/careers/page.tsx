@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { MapPin, Clock, DollarSign, Users, Heart, Coffee, Laptop, GraduationCap, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function CareersPage() {
   const jobOpenings = [
@@ -199,7 +200,7 @@ export default function CareersPage() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">Current Openings</h2>
           <div className="space-y-6">
-            {jobOpenings.map((job, index) => (
+            {jobOpenings?.map((job, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow bg-gray-800 border border-gray-700">
                 <CardHeader>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
@@ -221,7 +222,7 @@ export default function CareersPage() {
                       </div>
                     </div>
                     <div className="flex flex-col items-end gap-2">
-                      <Badge variant="outline">{job.department}</Badge>
+                      <Badge >{job.department}</Badge>
                       <span className="text-sm text-gray-500">Posted {job.posted}</span>
                     </div>
                   </div>
@@ -232,15 +233,17 @@ export default function CareersPage() {
                     <h4 className="font-semibold mb-2">Requirements:</h4>
                     <div className="flex flex-wrap gap-2">
                       {job.requirements.map((req, reqIndex) => (
-                        <Badge key={reqIndex} variant="secondary" className="text-xs">
+                        <Badge key={reqIndex}  className="text-xs">
                           {req}
                         </Badge>
                       ))}
                     </div>
                   </div>
+                  <Link href={"contact"}>
                   <Button className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600">
                     Apply Now <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -275,12 +278,16 @@ export default function CareersPage() {
             We're always looking for talented individuals. Send us your resume and let us know how you'd like to
             contribute to our team.
           </p>
-          <Button
-            size="lg"
-            className="text-lg px-8 bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600"
-          >
-            Send Your Resume
-          </Button>
+        <a href="mailto:info@kastech.com">
+  <Button
+    size="lg"
+    variant="outline"
+    className="text-lg px-8 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10"
+  >
+    Send Your Resume
+  </Button>
+</a>
+
         </div>
       </div>
     </div>

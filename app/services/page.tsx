@@ -1,6 +1,8 @@
+'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { FaWhatsapp } from "react-icons/fa";
 import {
   Globe,
   Smartphone,
@@ -173,12 +175,20 @@ export default function ServicesPage() {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Let's discuss your project requirements and create a solution that exceeds your expectations.
           </p>
-          <Button
-            size="lg"
-            className="text-lg px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
-          >
-            Get Free Quote <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <center>
+         <Button
+      size="lg"
+      className="text-lg px-8 bg-green-500 hover:bg-green-600 flex items-center gap-2"
+      onClick={() =>
+        window.open(
+          "https://wa.me/1234567890?text=Hello!%20I%27m%20interested%20in%20your%20services.",
+          "_blank"
+        )
+      }
+    >
+      Contact Us <FaWhatsapp className="h-5 w-5" />
+    </Button>
+    </center>
         </div>
       </div>
     </div>

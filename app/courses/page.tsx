@@ -1,3 +1,4 @@
+'use client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -16,8 +17,8 @@ import {
   Database,
   Cloud,
   Shield,
+  MessageCircle,
 } from "lucide-react"
-import Link from "next/link"
 
 export default function CoursesPage() {
   const courses = [
@@ -26,16 +27,16 @@ export default function CoursesPage() {
       title: "Full Stack JavaScript Development",
       description:
         "Master modern web development with React, Node.js, Express, and MongoDB. Build real-world applications from scratch.",
-      image: "https://picsum.photos/400/250?random=10",
-      price: 299,
-      originalPrice: 399,
+      image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=250&fit=crop&crop=center",
+      price: 20000,
+      originalPrice: 25000,
       duration: "12 weeks",
       lessons: 45,
       students: 1250,
       rating: 4.9,
       level: "Beginner to Advanced",
       category: "Web Development",
-      instructor: "Sarah Johnson",
+      instructor: "Abdullah Shahab",
       features: [
         "React 18 & Hooks",
         "Node.js & Express",
@@ -51,16 +52,16 @@ export default function CoursesPage() {
       id: 2,
       title: "Python & AI Development",
       description: "Learn Python programming, Django framework, and dive into Machine Learning and AI development.",
-      image: "https://picsum.photos/400/250?random=11",
-      price: 399,
-      originalPrice: 499,
+      image: "https://sdmntpreastus.oaiusercontent.com/files/00000000-ea8c-61f9-9855-a81d1a078e7d/raw?se=2025-05-30T23%3A10%3A01Z&sp=r&sv=2024-08-04&sr=b&scid=fbbcc26f-1caa-5480-87b9-20fc4151035c&skoid=b0fd38cc-3d33-418f-920e-4798de4acdd1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-30T16%3A01%3A24Z&ske=2025-05-31T16%3A01%3A24Z&sks=b&skv=2024-08-04&sig=RFpQxucC7a6aVzc5nPnRO4N9fPBTcebOps7V0aYD6D8%3D",
+      price: 30000,
+      originalPrice: 40000,
       duration: "16 weeks",
       lessons: 60,
       students: 890,
       rating: 4.8,
       level: "Intermediate",
       category: "AI & Machine Learning",
-      instructor: "Dr. Michael Chen",
+      instructor: "Ali Arshad",
       features: [
         "Python Fundamentals",
         "Django Framework",
@@ -77,16 +78,16 @@ export default function CoursesPage() {
       title: "DevOps & Cloud Engineering",
       description:
         "Master cloud infrastructure, containerization, and CI/CD pipelines with AWS, Docker, and Kubernetes.",
-      image: "https://picsum.photos/400/250?random=12",
-      price: 499,
-      originalPrice: 599,
+      image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=400&h=250&fit=crop&crop=center",
+      price: 35000,
+      originalPrice: 45000,
       duration: "10 weeks",
       lessons: 35,
       students: 650,
       rating: 4.9,
       level: "Advanced",
       category: "DevOps",
-      instructor: "Alex Rodriguez",
+      instructor: "Ahmed Farooq",
       features: [
         "AWS Cloud Services",
         "Docker & Kubernetes",
@@ -98,82 +99,7 @@ export default function CoursesPage() {
       gradient: "from-purple-500 to-indigo-600",
       popular: false,
     },
-    {
-      id: 4,
-      title: "Mobile App Development",
-      description:
-        "Build cross-platform mobile apps with React Native and Flutter. Deploy to iOS and Android app stores.",
-      image: "https://picsum.photos/400/250?random=13",
-      price: 349,
-      originalPrice: 449,
-      duration: "14 weeks",
-      lessons: 50,
-      students: 720,
-      rating: 4.7,
-      level: "Intermediate",
-      category: "Mobile Development",
-      instructor: "Emily Davis",
-      features: [
-        "React Native",
-        "Flutter Development",
-        "Native Features",
-        "App Store Deployment",
-        "Push Notifications",
-        "Real-time Features",
-      ],
-      gradient: "from-pink-500 to-rose-600",
-      popular: false,
-    },
-    {
-      id: 5,
-      title: "Cybersecurity Fundamentals",
-      description: "Learn ethical hacking, penetration testing, and security best practices to protect digital assets.",
-      image: "https://picsum.photos/400/250?random=14",
-      price: 449,
-      originalPrice: 549,
-      duration: "12 weeks",
-      lessons: 40,
-      students: 480,
-      rating: 4.8,
-      level: "Intermediate to Advanced",
-      category: "Cybersecurity",
-      instructor: "James Wilson",
-      features: [
-        "Ethical Hacking",
-        "Penetration Testing",
-        "Network Security",
-        "Web Application Security",
-        "Incident Response",
-        "Security Certifications",
-      ],
-      gradient: "from-red-500 to-orange-600",
-      popular: false,
-    },
-    {
-      id: 6,
-      title: "UI/UX Design & Frontend",
-      description: "Master modern design principles and frontend development with Figma, HTML, CSS, and JavaScript.",
-      image: "https://picsum.photos/400/250?random=15",
-      price: 249,
-      originalPrice: 329,
-      duration: "8 weeks",
-      lessons: 30,
-      students: 950,
-      rating: 4.6,
-      level: "Beginner",
-      category: "Design",
-      instructor: "Lisa Thompson",
-      features: [
-        "Figma Design",
-        "HTML5 & CSS3",
-        "JavaScript ES6+",
-        "Responsive Design",
-        "User Experience",
-        "Design Systems",
-      ],
-      gradient: "from-blue-500 to-cyan-600",
-      popular: false,
-    },
+   
   ]
 
   const categories = [
@@ -184,6 +110,13 @@ export default function CoursesPage() {
     { name: "DevOps", icon: Cloud, count: 1 },
     { name: "Cybersecurity", icon: Shield, count: 1 },
   ]
+
+  const handleWhatsAppRegistration = (courseName : any, price : any) => {
+    const phoneNumber = "+923001234567" // Replace with your actual WhatsApp number
+    const message = `Hi! I'm interested in enrolling for the "${courseName}" course (PKR ${price.toLocaleString()}). Can you please provide more details about the registration process?`
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+  }
 
   return (
     <div className="py-20 bg-gray-900 text-white min-h-screen">
@@ -208,9 +141,9 @@ export default function CoursesPage() {
 
         {/* Categories */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Course Categories</h2>
+          {/* <h2 className="text-2xl font-bold mb-6">Course Categories</h2> */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((category, index) => {
+            {/* {categories.map((category, index) => {
               const IconComponent = category.icon
               return (
                 <Card
@@ -224,7 +157,7 @@ export default function CoursesPage() {
                   </CardContent>
                 </Card>
               )
-            })}
+            })} */}
           </div>
         </div>
 
@@ -242,7 +175,7 @@ export default function CoursesPage() {
               )}
 
               <div className="relative">
-                <img src={course.image} alt={course.title} className="w-full h-48 object-cover" />
+                <img src={course.image} alt={course.title} className="w-full h-50 object-cover" />
                 <div
                   className={`absolute top-4 left-4 w-full h-2 bg-gradient-to-r ${course.gradient} rounded-full max-w-20`}
                 ></div>
@@ -298,16 +231,17 @@ export default function CoursesPage() {
                   <div className="flex items-center justify-between pt-4 border-t border-gray-700">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-2xl font-bold text-green-400">${course.price}</span>
-                        <span className="text-lg text-gray-500 line-through">${course.originalPrice}</span>
+                        <span className="text-2xl font-bold text-green-400">PKR {course.price.toLocaleString()}</span>
+                        <span className="text-lg text-gray-500 line-through">PKR {course.originalPrice.toLocaleString()}</span>
                       </div>
                       <p className="text-sm text-gray-400">Instructor: {course.instructor}</p>
                     </div>
                     <Button
-                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
-                      asChild
+                      className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 flex items-center gap-2"
+                      onClick={() => handleWhatsAppRegistration(course.title, course.price)}
                     >
-                      <Link href={`/courses/${course.id}/register`}>Enroll Now</Link>
+                      <MessageCircle className="w-4 h-4" />
+                      Enroll Now
                     </Button>
                   </div>
                 </div>
@@ -351,8 +285,17 @@ export default function CoursesPage() {
           </div>
         </div>
 
+        {/* WhatsApp Contact Info */}
+        <div className="text-center bg-green-500/10 border border-green-500/30 rounded-2xl p-6 mb-16">
+          <MessageCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-white mb-2">Quick Registration via WhatsApp</h3>
+          <p className="text-gray-400">
+            Click "Enroll Now" on any course to directly message us on WhatsApp for instant registration assistance!
+          </p>
+        </div>
+
         {/* CTA Section */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Start Your Learning Journey?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Join thousands of students who have transformed their careers with our comprehensive courses.
@@ -361,6 +304,7 @@ export default function CoursesPage() {
             <Button
               size="lg"
               className="text-lg px-8 bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700"
+            
             >
               Browse All Courses
             </Button>
@@ -372,7 +316,7 @@ export default function CoursesPage() {
               Free Trial Available
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

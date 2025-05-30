@@ -240,11 +240,11 @@ export default function TeamPage() {
                       <Linkedin className="h-4 w-4" />
                     </Button>
                   )}
-                  {member.social.github && (
+                  {/* {member.social?.github && (
                     <Button size="sm" variant="outline" className="p-2 border-gray-600 hover:border-cyan-500">
                       <Github className="h-4 w-4" />
                     </Button>
-                  )}
+                  )} */}
                   {member.social.twitter && (
                     <Button size="sm" variant="outline" className="p-2 border-gray-600 hover:border-cyan-500">
                       <Twitter className="h-4 w-4" />
@@ -332,20 +332,23 @@ export default function TeamPage() {
             We're always looking for talented individuals who share our passion for technology and education.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+            {/* <Button
               size="lg"
               className="text-lg px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
               asChild
             >
               <a href="/careers">View Open Positions</a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10"
-            >
-              Send Your Resume
-            </Button>
+            </Button> */}
+           <a href="mailto:info@kastech.com">
+  <Button
+    size="lg"
+    variant="outline"
+    className="text-lg px-8 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10"
+  >
+    Send Your Resume
+  </Button>
+</a>
+
           </div>
         </div>
       </div>

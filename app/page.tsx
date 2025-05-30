@@ -145,7 +145,7 @@ export default function HomePage() {
                 description: "Master React, Node.js, and MongoDB",
                 duration: "12 weeks",
                 level: "Beginner to Advanced",
-                price: "$299",
+                price: "Rs 20000",
                 gradient: "from-yellow-500 to-orange-600",
               },
               {
@@ -153,7 +153,7 @@ export default function HomePage() {
                 description: "Learn Python, Django, and Machine Learning",
                 duration: "16 weeks",
                 level: "Intermediate",
-                price: "$399",
+                price: "Rs 30000",
                 gradient: "from-green-500 to-teal-600",
               },
               {
@@ -161,7 +161,7 @@ export default function HomePage() {
                 description: "AWS, Docker, Kubernetes, and CI/CD",
                 duration: "10 weeks",
                 level: "Advanced",
-                price: "$499",
+                price: "Rs 35000",
                 gradient: "from-purple-500 to-indigo-600",
               },
             ].map((course, index) => (
@@ -249,7 +249,7 @@ export default function HomePage() {
             <Button size="lg" variant="secondary" className="text-lg px-8 bg-white text-gray-900 hover:bg-gray-100">
               Start Free Trial
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" className="text-lg px-8 border-white text-[black] hover:bg-white/10">
               <Link href="/courses">Browse Courses</Link>
             </Button>
           </div>
