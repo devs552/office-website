@@ -43,7 +43,7 @@ export default function PortfolioPage() {
       image: CDU,
       technologies: ["React Js", "Phyton", "Open AI API","Tailwind CSS"],
       category: "Web App",
-      liveUrl: "#",
+      liveUrl: "https://chatedu.highersummit.com/home",
       githubUrl: "#",
     },
   

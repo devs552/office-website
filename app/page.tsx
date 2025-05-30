@@ -246,9 +246,7 @@ export default function HomePage() {
             Join thousands of developers who've accelerated their careers with KA's Tech
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 bg-white text-gray-900 hover:bg-gray-100">
-              Start Free Trial
-            </Button>
+          
             <Button size="lg" variant="outline" className="text-lg px-8 border-white text-[black] hover:bg-white/10">
               <Link href="/courses">Browse Courses</Link>
             </Button>
