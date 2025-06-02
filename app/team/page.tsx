@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import wap from "../../images/wap.jpg"
 import {
   Users,
   Linkedin,
@@ -26,7 +27,7 @@ export default function TeamPage() {
       name: "Abdullah  Shahab",
       role: "Founder & CEO",
       department: "Leadership",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQGcaXoSrtMJEw/profile-displayphoto-shrink_800_800/B4DZYgotF.H4Ag-/0/1744304264899?e=1753920000&v=beta&t=87j4XO7cDmHlsc4YIk-PSbG2wmccPfUWrej_cRXMQ1Q",
+      image: wap,
       bio: "Visionary leader with 10+ years in tech industry. Founded KA's Tech to bridge the gap between education and industry needs.",
       skills: ["Strategic Planning", "Business Development", "Team Leadership", "Product Vision"],
       experience: "4+ years",
