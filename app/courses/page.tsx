@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import ai_image from "../../images/course2.png"
+import devOp_image from "../../images/course3.png"
 import {
   Code,
   Clock,
@@ -80,7 +81,7 @@ export default function CoursesPage() {
       title: "DevOps & Cloud Engineering",
       description:
         "Master cloud infrastructure, containerization, and CI/CD pipelines with AWS, Docker, and Kubernetes.",
-      image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=400&h=250&fit=crop&crop=center",
+      image: devOp_image,
       price: 35000,
       originalPrice: 45000,
       duration: "10 weeks",
@@ -177,7 +178,7 @@ export default function CoursesPage() {
               )}
 
               <div className="relative">
-                <Image src={course.image} height={1000} width={1000} alt={course.title} className="w-full h-50 object-cover" />
+                <Image src={course.image} height={100} width={100} alt={course.title} className="w-full h-[400px] object-cover" />
                 <div
                   className={`absolute top-4 left-4 w-full h-2 bg-gradient-to-r ${course.gradient} rounded-full max-w-20`}
                 ></div>
