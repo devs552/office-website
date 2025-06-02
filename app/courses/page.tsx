@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import ai_image from "../../images/course2.png"
 import {
   Code,
   Clock,
@@ -19,6 +20,7 @@ import {
   Shield,
   MessageCircle,
 } from "lucide-react"
+import Image from "next/image"
 
 export default function CoursesPage() {
   const courses = [
@@ -52,7 +54,7 @@ export default function CoursesPage() {
       id: 2,
       title: "Python & AI Development",
       description: "Learn Python programming, Django framework, and dive into Machine Learning and AI development.",
-      image: "https://sdmntpreastus.oaiusercontent.com/files/00000000-ea8c-61f9-9855-a81d1a078e7d/raw?se=2025-05-30T23%3A10%3A01Z&sp=r&sv=2024-08-04&sr=b&scid=fbbcc26f-1caa-5480-87b9-20fc4151035c&skoid=b0fd38cc-3d33-418f-920e-4798de4acdd1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-30T16%3A01%3A24Z&ske=2025-05-31T16%3A01%3A24Z&sks=b&skv=2024-08-04&sig=RFpQxucC7a6aVzc5nPnRO4N9fPBTcebOps7V0aYD6D8%3D",
+      image: ai_image,
       price: 30000,
       originalPrice: 40000,
       duration: "16 weeks",
@@ -175,7 +177,7 @@ export default function CoursesPage() {
               )}
 
               <div className="relative">
-                <img src={course.image} alt={course.title} className="w-full h-50 object-cover" />
+                <Image src={course.image} height={1000} width={1000} alt={course.title} className="w-full h-50 object-cover" />
                 <div
                   className={`absolute top-4 left-4 w-full h-2 bg-gradient-to-r ${course.gradient} rounded-full max-w-20`}
                 ></div>
